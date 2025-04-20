@@ -1,0 +1,55 @@
+
+body{
+    display: flex;
+    background-color: rgba(5, 5, 5, 0.741);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+
+    color: rgb(225, 129, 65);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+img{
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 2px rgb(205, 78, 78);
+}
+
+img:hover{  
+
+    box-shadow: 0px 0px 7px 2px rgb(51, 64, 185);
+    transform: scale(1.1);
+    
+}
+
+#descricao{  
+
+    color: rgb(216, 195, 182);    
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    
+   
+}  
+
+#cont{  
+
+    color: rgb(222, 211, 204);    
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    
+}  
+
+a{
+
+    text-decoration:underline rgb(174, 155, 143);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(225, 129, 65);
+}
+
+
+
