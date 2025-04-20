@@ -27,7 +27,6 @@ body{
     background-color: rgba(39, 37, 37, 0.856);
 }
 
-
 .menu{
 
     background-color: rgb(167, 134, 96);
@@ -39,47 +38,17 @@ main{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%;   
+     
 }
 
 .item{
 
-    border-radius: 10px;    
-    width:100%; 
-    position: relative;
-    animation: eventos 60s linear infinite;
-    
+    border-radius: 10px;       
 } 
 
-.item img{
-
-    border-radius: 10px;
-}
-
-.carrosel{
-    display: flex;
-    margin: 10px ;
-    width: 100%;
-    gap: 20px;
- 
     
-}    
 
-@keyframes eventos {
-   
 
-    from {
-      left: 100%;
-      
-    }
-  
-    to {
-      left: -650%;
-      
-    }
-   
-
-}       
 
 
 
