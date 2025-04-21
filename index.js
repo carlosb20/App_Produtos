@@ -11,8 +11,6 @@ lista_produtos.lista_produtos.map((produto) => {
 const gal = document.querySelector('.container');
 const carro = document.querySelector('.carrosel');
 
-
-
 carro.style.display = 'flex';
 carro.style.position = 'relative';
 carro.style.width = '100%';
@@ -20,6 +18,8 @@ carro.style.height = '100%';
 
 
 gal.style.display = 'flex';
+gal.style.width = '100%';
+
 gal.style.flexDirection = 'column';
 gal.style.background = 'rgb(85, 149, 136)';
 
@@ -50,25 +50,22 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
-const divtempo = [...document.querySelectorAll('#itemtempo')];
+
 const divimtem = [...document.querySelectorAll('.item')];
 
+//divimtem.style.animation = 'move 5s linear infinite';
+//console.log(divimtem[0].style.animation = 'move 5s linear infinite');
+//console.log(divimtem[1].style.animation = 'move 5s linear infinite');
+
+for(let i = 0; i < divimtem.length; i++){
+    divimtem[i].style.animation = 'move 5s linear infinite';
+    divimtem[i].style.animationDelay = `${i}s`;
+    divimtem[i].style.left = '80%';
+    divimtem[i].style.position = 'absolute';    
+}
 
 
 
-divimtem.forEach((item) => {
-   
-    item.style.position = 'absolute';
-    item.style.left = '100%';
-    item.style.transition = '5s';
-    item.animationDelay = '1s';
-    
-    item.style.animation = 'move 5s linear infinite';
-});   
-
-divtempo.forEach((item) => {
-    console.log(item);
-});
 
 
 
