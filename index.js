@@ -44,7 +44,7 @@ arrayimg.map((imagem,index) => {
 const style = document.createElement('style');
 style.textContent = `
 @keyframes move {
-    from { left: 70%; }
+    from { left: 80%; }
     to { left: 0; }
 }
 `;
@@ -60,7 +60,7 @@ const divimtem = [...document.querySelectorAll('.item')];
 for(let i = 0; i < divimtem.length; i++){
     divimtem[i].style.animation = 'move 5s linear infinite';
     divimtem[i].style.animationDelay = `${i}s`;
-    divimtem[i].style.left = '80%';
+    divimtem[i].style.left = '85%';
     divimtem[i].style.position = 'absolute';    
 }
 

@@ -41,7 +41,7 @@ main{
      
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 1000px) {
     img{
         
         width: 50px;
@@ -51,7 +51,11 @@ main{
     .item{
 
         position: absolute;
-        left: 90%;
+        left: 100%;
+    }
+    h1{
+
+        font: 2em bold;
     }
     
 }

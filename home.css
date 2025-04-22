@@ -81,3 +81,29 @@ img{
     transform: translateY(6px);
     
 }
+
+@media screen and (max-width: 800px) {
+    .card{
+        width: 120px;
+        justify-content:space-between;
+
+    }
+    #gallery{
+        justify-content: center;    
+        align-content: center;
+       
+    }
+    .gallery{
+        
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        font-size: 2em;
+    }
+    .btn button{
+        font-size: 0.8em;
+    }
+    
+}
