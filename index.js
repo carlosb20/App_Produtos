@@ -36,6 +36,7 @@ arrayimg.map((imagem,index) => {
     img.src = `${imagem}`;
     img.width = 150;
     img.height = 150;
+    img.style.borderRadius = '5px';
     gal.appendChild(div);
     carro.appendChild(div);
     div.appendChild(img); 
@@ -53,30 +54,18 @@ document.head.appendChild(style);
 
 const divimtem = [...document.querySelectorAll('.item')];
 
-//divimtem.style.animation = 'move 5s linear infinite';
-//console.log(divimtem[0].style.animation = 'move 5s linear infinite');
-//console.log(divimtem[1].style.animation = 'move 5s linear infinite');
+var x = 0
 
-for(let i = 0; i < divimtem.length; i++){
-    divimtem[i].style.animation = 'move 5s linear infinite';
-    divimtem[i].style.animationDelay = `${i}s`;
-    divimtem[i].style.left = '85%';
-    divimtem[i].style.position = 'absolute';    
+for(x = 0; x < divimtem.length; x++){
+    divimtem[x].style.animation = 'move 5s linear infinite';
+    divimtem[x].style.animationDelay = `${x*2}s`;
+    divimtem[x].style.left = '85%';
+    divimtem[x].style.marginTop = '8px';
+    divimtem[x].style.position = 'absolute'; 
+    
+    
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-//itens[0].style.position = 'relative';
-
-//console.log(itens[0].style.left = '-100px');
