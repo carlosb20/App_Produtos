@@ -1,2 +1,2 @@
 # App_Produtos
-App de Produto de pintura
+App de Produtos de pintura
