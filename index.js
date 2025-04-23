@@ -37,6 +37,7 @@ arrayimg.map((imagem,index) => {
     img.width = 150;
     img.height = 150;
     img.style.borderRadius = '5px';
+    
     gal.appendChild(div);
     carro.appendChild(div);
     div.appendChild(img); 
@@ -53,18 +54,38 @@ style.textContent = `
 document.head.appendChild(style);
 
 const divimtem = [...document.querySelectorAll('.item')];
+const divtempo = [...document.querySelectorAll('#itemtempo')];
 
-var x = 0
+const filtes = divimtem.filter((el) => el.id);
 
+
+var tem = 0
+
+function temposs(){
+    tem++
+    if(tem == divimtem.length){
+        tem = 0;
+    }
+    console.log(divimtem[`${tem}`].style.animationDelay = `${tem}s`);
+
+}
+
+setInterval(temposs, 1000);
+
+
+
+
+/*
 for(x = 0; x < divimtem.length; x++){
     divimtem[x].style.animation = 'move 5s linear infinite';
-    divimtem[x].style.animationDelay = `${x*2}s`;
-    divimtem[x].style.left = '85%';
+    divimtem[x].style.animationDelay = `${x}s`;
+    divimtem[x].style.left = '80%';
     divimtem[x].style.marginTop = '8px';
     divimtem[x].style.position = 'absolute'; 
-    
-    
 }
+ */   
+   
+
 
 
 
