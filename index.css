@@ -27,6 +27,7 @@ li{
     position: absolute;
     margin-top: 8px;
     animation:move 5s linear infinite;
+    animation-delay: var(--delay);
 }
 
 body{
