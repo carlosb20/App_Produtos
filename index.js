@@ -12,10 +12,11 @@ lista_produtos.lista_produtos.map((produto) => {
 //----------------------------------------------------------------------
 const tabe = document.querySelector('.tabela'); // tag tabela
 tabe.style.width = '100%';
-tabe.style.textAlign = 'center';
-tabe.style.display = 'flex';
+tabe.style.padding = '4px';
+
+tabe.style.alignItems = 'center';
 tabe.style.justifyContent = 'center';
-tabe.style.backgroundColor = 'rgba(131, 73, 73, 0.46)';
+tabe.style.backgroundColor = '#512ee8';
 
 // ------------------------------------------------------------------------
 
@@ -23,8 +24,8 @@ const caption = document.createElement('caption'); // criando 0 caption
     caption.textContent = 'Tabela de produtos';
     caption.style.fontSize = '30px';
     caption.style.marginBottom = '10px';
-    caption.style.fontWeight = 'bold';
-    caption.style.width = '30em';
+    //caption.style.fontWeight = 'bold';
+    caption.style.width = '100%';
     caption.style.color = 'rgba(232, 224, 224, 0.8)';
     caption.style.textShadow = '2px 2px 2px rgb(0, 0, 0)'; 
     tabe.appendChild(caption);
@@ -33,34 +34,39 @@ const caption = document.createElement('caption'); // criando 0 caption
 
 const table = document.createElement('table'); // tag table
 
-table.style.border = '2px solid black';
+table.style.border = '1px solid black';
 table.style.width = '100%';
-table.style.backgroundColor = 'rgba(206, 42, 42, 0.46)';
+table.style.backgroundColor = '#512ee8';
 //tabe.style.height = '300px';
+
+
 caption.appendChild(table);
 
 const tr = document.createElement('tr');// tag tr
-tr.style.width = '100%';
-tr.style.fontSize = '20px';
+tr.style.width = '5px';
+//tr.style.fontSize = '10px';
 tr.style.fontWeight = 'bold';
-tr.style.border = '1px solid black';
+tr.style.border = '1px solid #9561ff';
 table.appendChild(tr);
 
 //------------------------------------------------------
 
 const quante = document.createElement('th');// tag th
-quante.textContent = 'Quantidades';
+quante.textContent = 'Quant.';
 quante.style.padding = '10px';
-quante.style.textAlign = 'start';
+//quante.style.textAlign = 'start';
 quante.style.fontSize = '25px';
 quante.style.fontWeight = 'bold';
+quante.style.fontSize = '20px'; // quantidade
 
 const th1 = document.createElement('th');// tag th
 th1.textContent = 'Produto';
-th1.style.padding = '10px';
+th1.style.padding = '5px';
 th1.style.fontSize = '25px';
-th1.style.textAlign = 'start';
+//th1.style.textAlign = 'start';
 th1.style.fontWeight = 'bold';
+th1.style.fontSize = '20px'; // produto
+
 
 const th2 = document.createElement('th');// tag th
 th2.textContent = 'Marca';
@@ -68,12 +74,13 @@ th2.style.padding = '10px';
 th2.style.fontSize = '25px';
 th2.style.textAlign = 'end';
 th2.style.fontWeight = 'bold';
+th2.style.fontSize = '20px'; // marca
 
 const peso = document.createElement('th');// tag th
 peso.textContent = 'Peso';
 peso.style.padding = '10px';
 peso.style.textAlign = 'end';
-peso.style.fontSize = '25px';
+peso.style.fontSize = '20px'; // peso
 peso.style.fontWeight = 'bold';
 
 tr.appendChild(quante)
@@ -93,37 +100,45 @@ const  getprodutos=(...num)=>{
         const td4 = document.createElement('td');
 
         td1.style.padding = '10px';
-        td1.style.width = '30%';
+        td1.style.width = '100px';
         td2.style.padding = '10px';
-        td3.style.padding = '10px';
-        td4.style.padding = '10px';
+        td3.style.padding = '5px';
+        td4.style.padding = '5px';
+       
+       
 
         td1.style.fontSize = '20px';
         td2.style.fontSize = '20px';
-        td2.style.width = '15em';
+        td2.style.width = '100px';
+        td2.style.fontSize = '20px'; //produto
         td3.style.fontSize = '20px';
-        td3.style.width = '15em';
-        td4.style.fontSize = '20px';
+        td3.style.fontSize = '15px';
+        td3.style.width = '5px';
+        td4.style.fontSize = '20px';// peso
 
         td1.style.fontWeight = 'bold';
         td2.style.fontWeight = 'bold';
-        td2.style.width = '15em';
+        td2.style.width = '10px';
         td3.style.fontWeight = 'bold';
-        td3.style.width = '15em';
+        td3.style.fontSize = '20px';// marca
+        td3.style.width = '10px';
         td4.style.fontWeight = 'bold';
 
         td1.style.border = '1px solid black';
-        td1.style.width = '30%';
-        td1.style.textContent = 'center';
+        td1.style.fontSize = '20px'; //quantidade
         
         td2.style.border = '1px solid black';
-        td2.style.width = '15em';
+        td2.style.width = '10px';
         td3.style.border = '1px solid black';
-        td3.style.width = '15em';
+        td3.style.width = '10px';
         td4.style.border = '1px solid black';
         
         
-        td1.style.backgroundColor = 'rgba(117, 93, 93, 0.46)';
+        td1.style.backgroundColor = '#683ff0';
+        td2.style.backgroundColor = '#683ff0';
+        td3.style.backgroundColor = '#683ff0';
+        td4.style.backgroundColor = '#683ff0';
+        
         console.log(el[1]);
         const eles = lista_produtos.lista_produtos[el[1]]
         console.log(el[0],eles);
@@ -141,6 +156,8 @@ const  getprodutos=(...num)=>{
         
     })
 }
+
+// #3a1de1 #512ee8 #683ff0 #7e50f7 #9561ff
 
 
 getprodutos([10,0],[4,2],[5,4],[5,10],[10,20])
