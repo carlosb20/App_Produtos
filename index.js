@@ -119,22 +119,22 @@ tr.appendChild(peso)
         td1.style.fontSize = '20px';
         td2.style.fontSize = '20px';
         td2.style.width = '100px';
-        td2.style.fontSize = '20px'; //produto
+        td2.style.fontSize = '18px'; //produto
         td3.style.fontSize = '20px';
         td3.style.fontSize = '15px';
         td3.style.width = '5px';
-        td4.style.fontSize = '20px';// peso
+        td4.style.fontSize = '15px';// peso
 
         td1.style.fontWeight = 'bold';
         td2.style.fontWeight = 'bold';
         td2.style.width = '10px';
         td3.style.fontWeight = 'bold';
-        td3.style.fontSize = '20px';// marca
+        td3.style.fontSize = '17px';// marca
         td3.style.width = '10px';
         td4.style.fontWeight = 'bold';
 
         td1.style.border = '1px solid black';
-        td1.style.fontSize = '20px'; //quantidade
+        td1.style.fontSize = '15px'; //quantidade
         
         
         td2.style.border = '1px solid black';
