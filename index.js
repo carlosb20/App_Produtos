@@ -1,7 +1,10 @@
 import produtos from './produtos.js';
 import lista_produtos from './produtos.js'; 
 
-const arrayimg = [];
+
+const  getprodutos=(...num)=>{
+    //console.log(num[0])
+    const arrayimg = [];
 
 
 
@@ -13,9 +16,11 @@ lista_produtos.lista_produtos.map((produto) => {
 const tabe = document.querySelector('.tabela'); // tag tabela
 tabe.style.width = '100%';
 tabe.style.padding = '4px';
-
+tabe.style.display = 'flex';
+tabe.style.flexWrap = 'wrap';
+tabe.style.gap = '10px';
 tabe.style.alignItems = 'center';
-tabe.style.justifyContent = 'center';
+//tabe.style.justifyContent = 'center';
 tabe.style.backgroundColor = '#512ee8';
 
 // ------------------------------------------------------------------------
@@ -25,7 +30,7 @@ const caption = document.createElement('caption'); // criando 0 caption
     caption.style.fontSize = '30px';
     caption.style.marginBottom = '10px';
     //caption.style.fontWeight = 'bold';
-    caption.style.width = '100%';
+    //caption.style.width = '100%';
     caption.style.color = 'rgba(232, 224, 224, 0.8)';
     caption.style.textShadow = '2px 2px 2px rgb(0, 0, 0)'; 
     tabe.appendChild(caption);
@@ -52,27 +57,32 @@ table.appendChild(tr);
 //------------------------------------------------------
 
 const quante = document.createElement('th');// tag th
-quante.textContent = 'Quant.';
-quante.style.padding = '10px';
+quante.textContent = 'Unid.';
+quante.style.padding = '1px';
 //quante.style.textAlign = 'start';
-quante.style.fontSize = '25px';
 quante.style.fontWeight = 'bold';
+quante.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
 quante.style.fontSize = '20px'; // quantidade
+quante.style.textAlign = 'start';
+
 
 const th1 = document.createElement('th');// tag th
 th1.textContent = 'Produto';
-th1.style.padding = '5px';
+th1.style.padding = '1px';
 th1.style.fontSize = '25px';
-//th1.style.textAlign = 'start';
+th1.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
+th1.style.textAlign = 'start';
 th1.style.fontWeight = 'bold';
 th1.style.fontSize = '20px'; // produto
+
 
 
 const th2 = document.createElement('th');// tag th
 th2.textContent = 'Marca';
 th2.style.padding = '10px';
 th2.style.fontSize = '25px';
-th2.style.textAlign = 'end';
+th2.style.textAlign = 'start';
+th2.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
 th2.style.fontWeight = 'bold';
 th2.style.fontSize = '20px'; // marca
 
@@ -81,6 +91,7 @@ peso.textContent = 'Peso';
 peso.style.padding = '10px';
 peso.style.textAlign = 'end';
 peso.style.fontSize = '20px'; // peso
+peso.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
 peso.style.fontWeight = 'bold';
 
 tr.appendChild(quante)
@@ -90,8 +101,6 @@ tr.appendChild(peso)
 
 //------------------------------------------------
 
-const  getprodutos=(...num)=>{
-    //console.log(num[0])
     num.map((el)=>{
         const tr3 = document.createElement('tr');
         const td1 = document.createElement('td');
@@ -126,6 +135,7 @@ const  getprodutos=(...num)=>{
 
         td1.style.border = '1px solid black';
         td1.style.fontSize = '20px'; //quantidade
+        
         
         td2.style.border = '1px solid black';
         td2.style.width = '10px';
@@ -162,7 +172,7 @@ const  getprodutos=(...num)=>{
 
 getprodutos([10,0],[4,2],[5,4],[5,10],[10,20])
 
-
+getprodutos([3,6],[3,12],[2,24],[8,18],[7,7])
 
 
 /*
