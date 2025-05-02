@@ -48,9 +48,7 @@ lista_produtos.lista_produtos.map((produto) => {
     return resultado;
   }
   
-  // Exemplo de uso:
-  const produtoFiltrado = filterProduto(1);
-  //console.log(produtoFiltrado);
+ 
   
 const ca=(...pos)=>{
     
@@ -69,7 +67,7 @@ listapega.map((pega,index)=>{
 })
 
   
-console.log(lista_produtos.lista_produtos.length);
+
 
  
 

@@ -17,7 +17,7 @@ nome.innerHTML = produto.nome;
 descricao.innerHTML =`Marca : ${produto.marca}`;
 cont.innerHTML = `Quantidade :${produto.cont}`;
 
-console.log(produto.cont);
+
 
 
 

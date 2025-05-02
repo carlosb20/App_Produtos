@@ -1,213 +1,225 @@
-import produtos from './produtos.js';
+
 import lista_produtos from './produtos.js'; 
+const { jsPDF } = window.jspdf;
 
 
-const  getprodutos=(...num)=>{
-    //console.log(num[0])
-    const arrayimg = [];
+const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n meros
 
 
+    //----------------------------------------------------------------------
+    const tabe = document.querySelector('.tabela'); // tag tabela
+   
+    tabe.style.width = '100%';
+    tabe.style.padding = '3px';
+    tabe.style.display = 'flex';
+    tabe.style.flexWrap = 'wrap';
+    tabe.style.gap = '10px';
+    tabe.style.alignItems = 'start';
 
-lista_produtos.lista_produtos.map((produto) => {
-    arrayimg.push(produto.foto);
-});
+    // criando o cabecalho da tabela
 
-//----------------------------------------------------------------------
-const tabe = document.querySelector('.tabela'); // tag tabela
-tabe.style.width = '100%';
-tabe.style.padding = '4px';
-tabe.style.display = 'flex';
-tabe.style.flexWrap = 'wrap';
-tabe.style.gap = '10px';
-tabe.style.alignItems = 'center';
-//tabe.style.justifyContent = 'center';
-tabe.style.backgroundColor = '#512ee8';
+    //------------------------------------------------------------
 
-// ------------------------------------------------------------------------
-
-const caption = document.createElement('caption'); // criando 0 caption
-    caption.textContent = 'Tabela de produtos';
-    caption.style.fontSize = '30px';
-    caption.style.marginBottom = '10px';
-    //caption.style.fontWeight = 'bold';
-    //caption.style.width = '100%';
-    caption.style.color = 'rgba(232, 224, 224, 0.8)';
-    caption.style.textShadow = '2px 2px 2px rgb(0, 0, 0)'; 
-    tabe.appendChild(caption);
-
-// ---------------------------------------------------------------------
-
-const table = document.createElement('table'); // tag table
-
-table.style.border = '1px solid black';
-table.style.width = '100%';
-table.style.backgroundColor = '#512ee8';
-//tabe.style.height = '300px';
-
-
-caption.appendChild(table);
-
-const tr = document.createElement('tr');// tag tr
-tr.style.width = '5px';
-//tr.style.fontSize = '10px';
-tr.style.fontWeight = 'bold';
-tr.style.border = '1px solid #9561ff';
-table.appendChild(tr);
-
-//------------------------------------------------------
-
-const quante = document.createElement('th');// tag th
-quante.textContent = 'Unid.';
-quante.style.padding = '1px';
-//quante.style.textAlign = 'start';
-quante.style.fontWeight = 'bold';
-quante.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
-quante.style.fontSize = '20px'; // quantidade
-quante.style.textAlign = 'start';
-
-
-const th1 = document.createElement('th');// tag th
-th1.textContent = 'Produto';
-th1.style.padding = '1px';
-th1.style.fontSize = '25px';
-th1.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
-th1.style.textAlign = 'start';
-th1.style.fontWeight = 'bold';
-th1.style.fontSize = '20px'; // produto
-
-
-
-const th2 = document.createElement('th');// tag th
-th2.textContent = 'Marca';
-th2.style.padding = '10px';
-th2.style.fontSize = '25px';
-th2.style.textAlign = 'start';
-th2.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
-th2.style.fontWeight = 'bold';
-th2.style.fontSize = '20px'; // marca
-
-const peso = document.createElement('th');// tag th
-peso.textContent = 'Peso';
-peso.style.padding = '10px';
-peso.style.textAlign = 'end';
-peso.style.fontSize = '20px'; // peso
-peso.style.backgroundColor = 'rgba(87, 130, 202, 0.63)';
-peso.style.fontWeight = 'bold';
-
-tr.appendChild(quante)
-tr.appendChild(th1);
-tr.appendChild(th2)
-tr.appendChild(peso)
-
-//------------------------------------------------
-
-    num.map((el)=>{
-        const tr3 = document.createElement('tr');
-        const td1 = document.createElement('td');
-        const td2 = document.createElement('td');
-        const td3 = document.createElement('td');
-        const td4 = document.createElement('td');
-
-        td1.style.padding = '10px';
-        td1.style.width = '100px';
-        td2.style.padding = '10px';
-        td3.style.padding = '5px';
-        td4.style.padding = '5px';
-       
-       
-
-        td1.style.fontSize = '20px';
-        td2.style.fontSize = '20px';
-        td2.style.width = '100px';
-        td2.style.fontSize = '18px'; //produto
-        td3.style.fontSize = '20px';
-        td3.style.fontSize = '15px';
-        td3.style.width = '5px';
-        td4.style.fontSize = '15px';// peso
-
-        td1.style.fontWeight = 'bold';
-        td2.style.fontWeight = 'bold';
-        td2.style.width = '10px';
-        td3.style.fontWeight = 'bold';
-        td3.style.fontSize = '17px';// marca
-        td3.style.width = '10px';
-        td4.style.fontWeight = 'bold';
-
-        td1.style.border = '1px solid black';
-        td1.style.fontSize = '15px'; //quantidade
-        
-        
-        td2.style.border = '1px solid black';
-        td2.style.width = '10px';
-        td3.style.border = '1px solid black';
-        td3.style.width = '10px';
-        td4.style.border = '1px solid black';
-        
-        
-        td1.style.backgroundColor = '#683ff0';
-        td2.style.backgroundColor = '#683ff0';
-        td3.style.backgroundColor = '#683ff0';
-        td4.style.backgroundColor = '#683ff0';
-        
-        console.log(el[1]);
-        const eles = lista_produtos.lista_produtos[el[1]]
-        console.log(el[0],eles);
-        td1.textContent = `${el[0]}`;
-        td2.textContent = `${eles.nome}`;
-        td3.textContent = `${eles.marca}`;
-        td4.textContent = `${eles.cont}`;
-
-        caption.appendChild(tr3);
-        tr3.appendChild(td1);
-        tr3.appendChild(td2);
-        tr3.appendChild(td3);
-        tr3.appendChild(td4);
-
-        
-    })
-}
-
-// #3a1de1 #512ee8 #683ff0 #7e50f7 #9561ff
-
-
-getprodutos([10,0],[4,2],[5,4],[5,10],[10,20])
-
-getprodutos([3,6],[3,12],[2,24],[8,18],[7,7])
-
-
-/*
-arrayimg.map((imagem,index) => {
+    const tabela = document.createElement('table');// titilos
+    tabela.style.borderCollapse = 'collapse';
+    //tabe.style.border='1px solid rgba(141, 101, 101, 0.71)';
     
-    const div = document.createElement('div');
-    div.setAttribute('class', 'item');
-    div.setAttribute('id', `itemtempo${index}`);
-    const img = document.createElement('img');
-    img.src = `${imagem}`;
-    img.width = 150;
-    img.height = 150;
-    img.style.borderRadius = '5px';
-    
-    gal.appendChild(div);
-    carro.appendChild(div);
-    div.appendChild(img); 
-});
+    tabe.appendChild(tabela); 
 
-
-const style = document.createElement('style');
-style.textContent = `
-@keyframes move {
-    from { left: 70%; }
-    to { left: -50px; }
-}
-`;
-
-document.head.appendChild(style);
-
-*/
-  
+    // criando o cabecalho da tabela
+    const cabecalho = document.createElement('caption');
+    cabecalho.style.width = '100%';
+    const textca = document.createElement('th');
+    textca.innerHTML = `<h4> Listagem de Material de Pintura</h4> <br><p>${text}</p> `;
+    textca.style.backgroundColor ='rgba(140, 225, 29, 0.38)';
+    textca.style.width = '24.9em';
+    textca.style.height = '40px';
+    textca.style.border = '1px solid rgb(94, 55, 55)';
+    textca.style.padding = '5px';
+    textca.style.fontSize = '20px';
    
 
+// ----------------------- Cabeçalho  ----------------------------------
 
+      
+    cabecalho.appendChild(textca);
+    tabela.appendChild(cabecalho);
+    cabecalho.appendChild(textca);
+    tabela.appendChild(cabecalho);
+
+    // criando o titulo da tabela
+
+
+    
+    const titulo_tr = document.createElement('tr');
+    tabela.appendChild(titulo_tr);
+
+    // criando o titulo da coluna produto
+   
+// --------------------- unidade  ---------------------------
+
+    const td1_unidade = document.createElement('td');
+    td1_unidade.textContent = `${"Produto"}`;
+    td1_unidade.style.backgroundColor =' #3a1de1';
+    td1_unidade.style.color = '#c7bebe';
+    td1_unidade.style.textAlign = 'center';
+    td1_unidade.style.width = '100px';
+    td1_unidade.style.padding = '5px';
+    td1_unidade.style.border = '1px solid rgb(54, 46, 46)';
+    td1_unidade.style.fontSize = '14px';
+
+    // criando o titulo da coluna marca
+   
+// -------------------  Produto ------------------------------------
+
+    const td2_produto = document.createElement('td');
+    td2_produto.style.backgroundColor =' #3a1de1';
+    td2_produto.style.color = '#c7bebe';
+    td2_produto.style.textAlign = 'center';
+    td2_produto.style.width = '100px';
+    td2_produto.style.padding = '5px';
+    td2_produto.style.border = '1px solid rgb(54, 46, 46)';
+    td2_produto.style.fontSize = '15px';
+    td2_produto.textContent = `${"Marca"}`;
+
+    // criando o titulo da coluna quantidade
+//----------------- Marca ----------------------------------------
+
+    const td3_marca = document.createElement('td');
+    td3_marca.style.backgroundColor =' #3a1de1';
+    td3_marca.style.color = '#c7bebe';
+    td3_marca.style.textAlign = 'center';
+    td3_marca.style.width = '100px';
+    td3_marca.style.padding = '5px';
+    td3_marca.style.border = '1px solid rgb(54, 46, 46)';
+    td3_marca.style.fontSize = '15px';
+    td3_marca.textContent = `${"Quantidade"}`;
+
+
+//--------------------------------------------
+
+    
+    const td4_peso = document.createElement('td');
+    td4_peso.style.backgroundColor =' #3a1de1';
+    td4_peso.style.color = '#c7bebe';
+    td4_peso.style.textAlign = 'center';
+    td4_peso.style.width = 'inherit';
+    td4_peso.style.padding = '5px';
+    td4_peso.style.border = '1px solid rgb(54, 46, 46)';
+    td4_peso.style.fontSize = '15px';
+    td4_peso.textContent = `${"Unidade"}`;
+
+   
+// ----------------------------------------
+    
+    titulo_tr.appendChild(td1_unidade);
+    titulo_tr.appendChild(td2_produto);
+    titulo_tr.appendChild(td3_marca);
+    titulo_tr.appendChild(td4_peso);
+
+
+    // percorrendo a lista de numeros recebidos e criando as linhas da tabela
+    num.map((el)=>{
+    
+        // pegando o objeto da lista de produtos com o id igual ao numero recebido
+        const eles = lista_produtos.lista_produtos[el[1]]
+        const tr = document.createElement('tr');
+        tabela.appendChild(tr);
+    //------------------------------------------------
+        const td1 = document.createElement('td'); // unidade
+        td1.style.textAlign = 'center';
+        td1.style.width = '100px';
+        td1.style.padding = '5px';
+        td1.style.border = '1px solid rgb(54, 46, 46)';
+        td1.style.fontSize = '15px';
+        td1.style.color = 'rgb(145, 148, 161)';
+        td1.style.backgroundColor = 'rgba(97, 69, 192, 0.7)';
+
+    //----------------------------------------------
+        const td2 = document.createElement('td');
+        td2.setAttribute('class', 'td2event'); // produto
+        td2.style.textAlign = 'center';
+        td2.style.width = '100px';
+        td2.style.padding = '5px';
+        td2.style.border = '1px solid rgb(54, 46, 46)';
+        td2.style.fontSize = '15px';
+        td2.style.color = 'rgb(145, 148, 161)';
+        td2.style.backgroundColor = 'rgba(97, 69, 192, 0.7)';
+
+    //-------------------------------------- 97 69 192 0.7 -------
+        const td3 = document.createElement('td');
+        td3.style.textAlign = 'center';
+        td3.style.width = '100px';
+        td3.style.padding = '5px';
+        td3.style.border = '1px solid rgb(54, 46, 46)';
+        td3.style.fontSize = '15px';
+        td3.style.color = 'rgb(145, 148, 161)';
+        td3.style.backgroundColor = 'rgba(97, 69, 192, 0.7)';
+
+    //------------------------------------------------
+        const td4 = document.createElement('td');
+        td4.style.textAlign = 'center';
+        td4.style.width = '100px';
+        td4.style.padding = '5px';
+        td4.style.border = '1px solid rgb(54, 46, 46)';
+        td4.style.fontSize = '15px';
+        td4.style.color = 'rgb(145, 148, 161)';
+        td4.style.backgroundColor = 'rgba(97, 69, 192, 0.7)';
+
+
+        td1.textContent = `${eles.nome} `;
+        td2.textContent = `${eles.marca}`;
+        td3.textContent = `${el[0]}`;
+        td4.textContent = `${eles.cont}`;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+
+        td2.addEventListener('click',()=>{
+            window.location.href = `home2.html?id=${eles.id}`;  
+        })
+    })
+           
+    
+}
+
+
+
+//------------------ eventocor ---------------------------
+
+
+
+
+
+// --------------------- pdf ------------------------------
+
+document.querySelector('.btn').addEventListener('click', ()=>{   
+        
+    //const doc = new jsPDF();
+    //const elemento = document.querySelector(".tabela");
+    //const capa = document.querySelector("caption"); 
+    //console.log(capa.childNodes.item(0).textContent);
+    //doc.text(10, 10, 'Tabela de produtos');
+    //doc.text(10, 20, capa.childNodes.item(0).textContent);
+    //doc.text(10, 30, '<h1> Descrição do produto </h1>');
+    //doc.html(elemento);
+
+    //doc.save('tabela.pdf');
+    
+})
+/*******  ea3a3d2d-c7c4-44fc-bb93-55684724044e  *******/
+
+// #3a1de1 #512ee8 #683ff0rgb(57, 52, 71) #9561ff
+
+getprodutos('equipamento : guindaste',[7,35],[4,39],[10,38],[4,16],[4,17],[4,5],
+
+    [4,1],[2,10],[10,8],[10,7],[5,21],[5,22],[5,23],[5,24],[5,25],[5,20],[5,19],
+    [5,18],[102,29],[102,30],[102,32],[3,13],[2,12],[2,11],[5,28])
+
+getprodutos('equipamento : empilhadeira ',[3,6],[3,12],[2,24],[8,18],[7,7],[2,1],[3,5])
+
+//getprodutos('equipamento : empilhadeira ',[3,6],[3,12],[2,24],[8,18],[7,7],[2,1],[3,5])
 
 
 
