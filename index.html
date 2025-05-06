@@ -23,19 +23,75 @@
 
         
        
-        <div class="tabela" ></div>
+      <div class="tabela" id="tabelas" ></div>
         
         
-        <button class="btn"> imprimir </button>
+      <div class="pdf">
+        <div class="btn3D">
+          <button class="btn" onclick="exportarTabela()"> Gerar PDF </button>
+        </div>
+      </div>
 
-        
-       
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js" integrity="sha512-ad3j5/L4h648YM/KObaUfjCsZRBP9sAOmpjaT2BDx6u9aBrKFp7SbeHykruy83rxfmG42+5QqeL/ngcojglbJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <!-- jsPDF -->   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+     <!-- autoTable plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <script type="module" src="index.js"></script>
+
+    <script src="pdf.js" type="module"></script>
+
+    <script>
+      // Função para exportar a tabela para PDF
+      function exportarTabela() {
+        // Garantir que o DOM esteja carregado e a tabela exista
+        const tabela = document.getElementById('tabelas');
+        if (tabela) {
+          // Criar a instância do jsPDF
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
     
-    <script type="module" src="index.js">
-        
-        
-        
+          const rows = Array.from(tabela.querySelectorAll('tr')).map(row => {
+            
+            return Array.from(row.querySelectorAll('th, td')).map(cell => cell.textContent);
+          });
+          
+          const head = rows[0];  // Cabeçalho da tabela
+          const body = rows.slice(1);  // Corpo da tabela
+
+        //var  das = document.querySelector('caption');
+        //console.log(das.childNodes[0].childNodes[3].textContent);
+        //var caption = das.childNodes[0].childNodes[3].textContent;
+        const caption = 'Listagem de Material de Pintura';
+
+    
+          // Usando autoTable para gerar a tabela no PDF
+          doc.autoTable({
+            head: [head],       // Cabeçalho da tabela
+            body: body,         // Corpo da tabela
+            startY: 40,         // Distância do topo da página
+            margin: { top: 20 }, // Margem superior
+            styles: {
+              fontSize: 7,      // Tamanho da fonte
+              cellPadding: 1,    // Espaçamento nas células
+              halign: 'center',  // Alinhamento horizontal das células
+              valign: 'middle'   // Alinhamento vertical das células
+            },
+            columnStyles: {0: { cellWidth: 'auto' },},
+            didDrawPage: function (data) {
+              doc.setFontSize(12);
+              doc.text('Listagem de Material de Pintura', 14, 15);  // Título da página
+              doc.text(caption, doc.internal.pageSize.width / 2, 30, { align: 'center' });
+            }
+          });
+          pageBreak: 'auto'
+    
+          // Salvar o PDF
+          doc.save('tabela-completa.pdf');
+        } else {
+          console.error('Tabela não encontrada!');
+        }
+      }
     </script>
 
 </body>
