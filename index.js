@@ -109,7 +109,7 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
     td1_unidade.style.width = '100px';
     td1_unidade.style.padding = '5px';
     td1_unidade.style.border = '1px solid rgb(54, 46, 46)';
-    td1_unidade.style.fontSize = '20px';
+    td1_unidade.style.fontSize = '18px';
 
     // criando o titulo da coluna marca
    
@@ -123,7 +123,7 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
     td2_produto.style.width = '100px';
     td2_produto.style.padding = '5px';
     td2_produto.style.border = '1px solid rgb(54, 46, 46)';
-    td2_produto.style.fontSize = '20px';
+    td2_produto.style.fontSize = '18px';
     td2_produto.textContent = `${"Marca"}`;
     
 
@@ -137,7 +137,7 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
     td3_marca.style.width = '100px';
     td3_marca.style.padding = '5px';
     td3_marca.style.border = '1px solid rgb(54, 46, 46)';
-    td3_marca.style.fontSize = '20px';
+    td3_marca.style.fontSize = '18px';
     td3_marca.textContent = `${"Quantidade"}`;
 
 
@@ -151,7 +151,7 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
     td4_peso.style.width = 'inherit';
     td4_peso.style.padding = '5px';
     td4_peso.style.border = '1px solid rgb(54, 46, 46)';
-    td4_peso.style.fontSize = '20px';
+    td4_peso.style.fontSize = '18px';
     td4_peso.textContent = `${"Unidade"}`;
 
    

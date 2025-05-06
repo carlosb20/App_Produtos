@@ -113,7 +113,7 @@ body{
 
 @media(min-width: 320px)  and (max-width: 370px){ 
     .menu{
-        width: 365px;
+        width: 350px;
         
     }
     .pdf{
