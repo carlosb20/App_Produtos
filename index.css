@@ -39,7 +39,7 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cac9d32f;
+    background-color: #3b2cbf2f;
 }
 
 .btn3D{
@@ -99,25 +99,29 @@ body{
 .menu{
 
     background-color: #3a1de1;
-    width: 100%;
-    
-   
-     
+        
 }
 
 .menu nav{
 
-    width: 100%;
+    max-width: 100%;
+
     
 }
 
-@media(min-width: 200px)  and (max-width: 370px){ 
+@media(width: 320px){ 
     .menu{
-        width: 350px;
+        width: 450px;
         
     }
     .pdf{
-        width: 365px;
+        width: 350px;
+    }
+    h1{
+
+        text-align: start;
+        padding-left: 10px;
+       
     }
 }
 
