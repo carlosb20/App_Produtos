@@ -116,13 +116,20 @@ body{
         
     }
     .pdf{
-        width: 350px;
+       
+        align-items: center;
     }
     h1{
 
         text-align: start;
         padding-left: 10px;
+    }
+
+    body{
+
+        display:grid;
        
+        
     }
 }
 
