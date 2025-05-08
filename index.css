@@ -111,14 +111,7 @@ body{
 }
 
 @media(min-width: 200px)  and (max-width: 500px){ 
-    .menu{
-        width: 450px;
-        
-    }
-    .pdf{
-       
-        align-items: center;
-    }
+    
     h1{
 
         text-align: start;
