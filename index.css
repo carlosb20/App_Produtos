@@ -109,7 +109,7 @@ body{
     
 }
 
-@media(min-width: 200px) and (max-width: 320px){ 
+@media(min-width: 200px)  and (max-width: 500px){ 
     .menu{
         width: 450px;
         
