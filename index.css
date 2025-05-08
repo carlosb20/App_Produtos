@@ -39,7 +39,7 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3b2cbf2f;
+    
 }
 
 .btn3D{
@@ -76,7 +76,8 @@ button:active{
 
 h4{
 
-    color: rgb(53, 57, 68);
+    color: rgb(200, 204, 214);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.568);
     
 }
 
@@ -93,7 +94,7 @@ li a{
 
 body{
 
-    background-color: rgba(39, 37, 37, 0.856);
+    background-color: #3a1de1;
 }
 
 .menu{

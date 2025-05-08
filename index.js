@@ -39,14 +39,16 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
     texth.textContent = `${text}`;
     texth.style.color = 'rgba(186, 215, 191, 0.81)';
     
+    texth.style.textShadow = '2px 2px 2px rgba(0, 0, 0, 0.568)';
+    
     texth.style.textAlign = 'start';
     texth.style.padding = '3px';
     texth.style.width = '15em';
-    texth.style.backgroundColor = 'rgba(140, 225, 29, 0.38)';
-    textt.style.backgroundColor = 'rgba(140, 225, 29, 0.38)';
+    texth.style.backgroundColor = 'rgba(136, 173, 215, 0.38)';
+    textt.style.backgroundColor = 'rgba(136, 173, 215, 0.38)';
     
-    texttt.style.backgroundColor = 'rgba(140, 225, 29, 0.38)';
-    textttt.style.backgroundColor = 'rgba(140, 225, 29, 0.38)';
+    texttt.style.backgroundColor = 'rgba(136, 173, 215, 0.38)';
+    textttt.style.backgroundColor = 'rgba(136, 173, 215, 0.38)';
 
     textt.style.borderRight = '1px solid rgb(69, 62, 62)';
     
@@ -70,7 +72,7 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
     cabecalho.style.width = '100%';
     const textca = document.createElement('th');
     textca.innerHTML = `<h4> Listagem de Material de Pintura  </h4>`;
-    textca.style.backgroundColor ='rgba(140, 225, 29, 0.38)';
+    textca.style.backgroundColor ='rgba(136, 173, 215, 0.38)';
     textca.style.width = '50em';
     textca.style.height = '70px';
     textca.style.border = '1px solid rgb(94, 55, 55)';
