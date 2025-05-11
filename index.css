@@ -23,7 +23,7 @@ ul{
 
 li{    
     
-    background-color:#3a1de1;
+    background-color:#26204be0;
     margin-left: 25px;
     padding: 10px;
     color: #c7bebe;
@@ -89,23 +89,25 @@ li a{
     font-size: 20px;
     
     
+    
 }
 
 
 body{
 
-    background-color: #3a1de1;
+    background-color: #26204be0;
 }
 
 .menu{
 
-    background-color: #3a1de1;
+    background-color: #26204be0;
         
 }
 
 .menu nav{
 
     max-width: 100%;
+    
 
     
 }
