@@ -90,8 +90,6 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
 
     // criando o titulo da tabela
 
-
-    
     const titulo_tr = document.createElement('tr');
     tabela.appendChild(titulo_tr);
 
@@ -220,7 +218,6 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
         td4.style.color = 'rgb(145, 148, 161)';
         td4.style.backgroundColor = 'rgba(97, 69, 192, 0.7)';
 
-
         td1.textContent = `${eles.nome} `;
         td2.textContent = `${eles.marca}`;
         td3.textContent = `${el[0]}`;
@@ -233,15 +230,10 @@ const getprodutos = (text, ...num) => { // fun o que recebe um texto e v rios n 
         td2.addEventListener('click',()=>{
             window.location.href = `home2.html?id=${eles.id}`;  
         })
-    })
-           
-    
+    })  
 }
 
-
-
 // #3a1de1 #512ee8 #683ff0rgb(57, 52, 71) #9561ff
-
 getprodutos('equipamento  guindaste',[7,35],[4,39],[10,38],[4,16],[4,17],[4,5],
     [4,1],[2,10],[10,8],[10,7],[5,21],[5,22],[5,23],[5,24],[5,25],[5,20],[5,19],
     [5,18],[102,29],[102,30],[102,32],[3,13],[2,12],[2,11],[5,28])
@@ -250,9 +242,6 @@ getprodutos('equipamento  empilhadeira ',[4,35],[4,39],[8,38],[4,16],[4,17],[2,1
     [2,10],[10,8],[10,7],[5,21],[5,22],[5,23],[5,24],[5,25],[5,20],[5,19],[5,18],
     [102,29],[102,30],[102,32],[3,13],[2,12],[2,11],[5,28])
 
-export {arraypdf}
-
-//getprodutos('equipamento : empilhadeira ',[3,6],[3,12],[2,24],[8,18],[7,7],[2,1],[3,5])
 
 
 

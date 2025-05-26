@@ -84,12 +84,9 @@ h4{
 li a{
 
     color: rgba(240, 248, 255, 0.644);
-    text-decoration: none;
+    
     font-style: italic;
-    font-size: 20px;
-    
-    
-    
+    font-size: 20px;   
 }
 
 
@@ -106,10 +103,7 @@ body{
 
 .menu nav{
 
-    max-width: 100%;
-    
-
-    
+    max-width: 100%;   
 }
 
 @media(min-width: 200px)  and (max-width: 500px){ 
@@ -123,8 +117,8 @@ body{
     body{
 
         display:grid;
-       
         
+
     }
 }
 
