@@ -38,11 +38,12 @@ const prod = '{"produtos":[' +
 '{"id": "33","foto":"./img/disco_220.jpg","nome": "Disco de Hookt Orbital 220","marca":"Norton","cont":" Discos"},' +
 '{"id": "34","foto":"./img/cinza_grafite.jpg","nome": "Cinza Grafite","marca":"BRAZILIAN","cont":" 3,6 ml"},' +
 '{"id": "35","foto":"./img/cinza_moldura.jpg","nome": "Cinza moldura nitro","marca":"Brasilux","cont":" 3,6 ml"},' +
-'{"id": "36","foto":"./img/azul_raul.jpg","nome": " Azul Raul PU","marca":"SHERWIN-WILLIAMS","cont":" 3,6 ml"},' +
+'{"id": "36","foto":"./img/azul_ral.jpg","nome": " Azul Ral PU 5002","marca":"SHERWIN-WILLIAMS","cont":" 3,6 ml"},' +
 '{"id": "37","foto":"./img/branco_geada.jpg","nome": "Branco Geada 2 Pu","marca":"SHERWIN-WILLIAMS","cont":" 3,6 ml"},' +
 '{"id": "38","foto":"./img/branco_polar.jpg","nome": "Branco polar Pu","marca":"SHERWIN-WILLIAMS","cont":" 3,6 ml"},' +
 '{"id": "39","foto":"./img/catalizador.jpg","nome": "Catalizador para Pu","marca":"SHERWIN-WILLIAMS","cont":" 900 ml"},' +
-'{"id": "40","foto":"./img/cinza_pu.jpg","nome": " Cinza PU 7043","marca":"SHERWIN-WILLIAMS","cont":" 3,6 ml"}' +
+'{"id": "40","foto":"./img/cinza_pu.jpg","nome": " Cinza PU 7043","marca":"SHERWIN-WILLIAMS","cont":" 3,6 ml"},'+
+'{"id":"41" , "foto":"/img/preto-semi-brilho.jpg","nome":"Esmalte Sintetico Preto Semi Brilho","marca":"Brasilux","cont":"3.6ml"}'+ 
 
 
 ']}'; 
